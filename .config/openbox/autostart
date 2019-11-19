@@ -18,7 +18,7 @@
 
 tint2 &
 
-feh --bg-scale /usr/share/backgrounds/archlinux/archlinux-arrival.jpg &
+${HOME}/.scripts/set-background.sh &
 
 nm-applet &
 

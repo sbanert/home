@@ -234,6 +234,7 @@ myStartupHook = do
   safeSpawn "slack" ["--startup"]
   safeSpawn "nm-applet" []
   unsafeSpawn "${HOME}/.scripts/set-background.sh"
+  safeSpawn "pasystray" []
   -- safeSpawn "wicd-client" []
 
 ------------------------------------------------------------------------
