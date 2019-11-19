@@ -233,7 +233,7 @@ myStartupHook = do
   safeSpawn "signal-desktop" ["--start-in-tray"]
   safeSpawn "slack" ["--startup"]
   safeSpawn "nm-applet" []
-  unsafeSpawn "feh --bg-scale ~/Pictures/wallpapers/Kite.jpg"
+  unsafeSpawn "${HOME}/.scripts/set-background.sh"
   -- safeSpawn "wicd-client" []
 
 ------------------------------------------------------------------------

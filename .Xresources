@@ -1,7 +1,7 @@
 XTerm.termName: xterm-256color
 
-URxvt.font: xft:Source Code Pro for Powerline:size=12
-*faceName: Source Code Pro for Powerline
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=12
+*faceName: DejaVu Sans Mono for Powerline
 *faceSize: 12
 *faceSize1: 8
 *faceSize2: 10
