@@ -44,6 +44,12 @@
             <item label="TkVNC"> <action name="Execute">
                 <execute>uxterm -e tkvnc</execute>
             </action> </item>
+	    <item label="W3M"> <action name="Execute">
+			    <execute>uxterm -e w3m -v</execute>
+	    </action> </item>
+	    <item label="Lynx"> <action name="Execute">
+			    <execute>uxterm -e lynx</execute>
+	    </action> </item>
         </menu>
         <menu id="19" label="Shells">
             <item label="File Manager PCManFM"> <action name="Execute">
