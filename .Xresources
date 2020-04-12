@@ -2,7 +2,7 @@ XTerm.termName: xterm-256color
 
 URxvt.font: xft:DejaVu Sans Mono for Powerline:size=12
 *faceName: DejaVu Sans Mono for Powerline
-*faceSize: 12
+*faceSize: 10
 *faceSize1: 8
 *faceSize2: 10
 *faceSize3: 12

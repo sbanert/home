@@ -11,6 +11,8 @@ import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run (spawnPipe, safeSpawn, unsafeSpawn)
+import XMonad.Util.SpawnOnce (spawnOnce)
+import Graphics.X11.ExtraTypes.XF86
 import Data.Monoid
 import System.Exit
 import System.IO (hPutStrLn)
@@ -112,6 +114,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
     -- Mod-Shift-/: Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
+    -- Brightness hotkeys
+    , ((noModMask, xF86XK_MonBrightnessDown), spawn ("brightnessctl s 5%-"))
+    , ((noModMask, xF86XK_MonBrightnessUp), spawn ("brightnessctl s 5%+"))
+    -- Volume hotkeys
+    , ((noModMask, xF86XK_AudioMute), spawn ("pamixer -t"))
+    , ((noModMask, xF86XK_AudioRaiseVolume), spawn ("pamixer -i 5"))
+    , ((noModMask, xF86XK_AudioLowerVolume), spawn ("pamixer -d 5"))
     ]
     ++
     -- mod-[1..9], Switch to workspace N
@@ -208,7 +217,7 @@ myEventHook = mempty
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 myLogHook xmproc = dynamicLogWithPP xmobarPP
   { ppOutput = hPutStrLn xmproc
-  , ppTitle = xmobarColor "#b8bb26" "" . shorten 50
+  , ppTitle = xmobarColor "#b8bb26" "" . shorten 100
   }
 
 ------------------------------------------------------------------------
@@ -219,22 +228,23 @@ myLogHook xmproc = dynamicLogWithPP xmobarPP
 -- per-workspace layout choices.
 myStartupHook :: X ()
 myStartupHook = do
-  safeSpawn "trayer" ["--edge", "top",
-                      "--align", "right",
-                      "--SetDockType", "true",
-                      "--SetPartialStrut", "true",
-                      "--expand", "true",
-                      "--width", "10",
-                      "--alpha", "0",
-                      "--transparent", "true",
-                      "--tint", "0x282828",
-                      "--height", "23",
-                      "--margin", "1"]
-  safeSpawn "signal-desktop" ["--start-in-tray"]
-  safeSpawn "slack" ["--startup"]
-  safeSpawn "nm-applet" []
+  spawnOnce $ "trayer " ++ (unwords ["--edge", "top",
+                                     "--align", "right",
+                                     "--SetDockType", "true",
+                                     "--SetPartialStrut", "true",
+                                     "--expand", "true",
+                                     "--width", "5",
+                                     "--alpha", "0",
+                                     "--transparent", "true",
+                                     "--tint", "0x282828",
+                                     "--height", "21",
+                                     "--margin", "0"])
+  -- spawnOnce "signal-desktop --start-in-tray"
+  -- spawnOnce "slack --startup"
+  spawnOnce "nm-applet"
   unsafeSpawn "${HOME}/.scripts/set-background.sh"
-  safeSpawn "pasystray" []
+  spawnOnce "pasystray"
+  spawnOnce "blueman-applet"
   -- safeSpawn "wicd-client" []
 
 ------------------------------------------------------------------------

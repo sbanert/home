@@ -1,9 +1,9 @@
-Config { font = "xft:DejaVu Sans Mono:size=12:antialias=true"
+Config { font = "xft:DejaVu Sans Mono:size=10:antialias=true"
        , additionalFonts = []
        , bgColor = "#282828"
        , fgColor = "#ebdbb2"
        , alpha = 255
-       , position = TopW L 90
+       , position = TopW L 95
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
@@ -13,7 +13,14 @@ Config { font = "xft:DejaVu Sans Mono:size=12:antialias=true"
        , border = NoBorder
        , commands = [ Run Date "%a %b %_d %Y %H:%M" "date" 10
                     , Run StdinReader
-                    , Run Battery [ "--template" , "Batt: <acstatus>"
+                    , Run Memory  [ "--template" , "Mem: <used>M/<total>M"
+                                  , "--Low"      , "20"
+                                  , "--High"     , "80"
+                                  , "--low"      , "#fb4934"
+                                  , "--normal"   , "#fabd2f"
+                                  , "--high"     , "#b8bb26"
+                                  ] 10
+                    , Run Battery [ "--template" , "<acstatus>"
                                   , "--Low"      , "10"
                                   , "--High"     , "80"
                                   , "--low"      , "#fb4934"
@@ -31,5 +38,5 @@ Config { font = "xft:DejaVu Sans Mono:size=12:antialias=true"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{%battery% | %date%"
+       , template = "%StdinReader% }{%battery% | %memory% | %date%"
        }
