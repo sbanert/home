@@ -117,6 +117,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Brightness hotkeys
     , ((noModMask, xF86XK_MonBrightnessDown), spawn ("brightnessctl s 5%-"))
     , ((noModMask, xF86XK_MonBrightnessUp), spawn ("brightnessctl s 5%+"))
+    , ((modm, xF86XK_MonBrightnessDown), spawn ("brightnessctl s 1"))
+    , ((modm, xF86XK_MonBrightnessUp), spawn ("brightnessctl s 100%"))
     -- Volume hotkeys
     , ((noModMask, xF86XK_AudioMute), spawn ("pamixer -t"))
     , ((noModMask, xF86XK_AudioRaiseVolume), spawn ("pamixer -i 5"))
@@ -138,7 +140,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 ------------------------------------------------------------------------
 -- Mouse bindings: default actions bound to mouse events
 myMouseBindings :: XConfig l -> M.Map (KeyMask, Button) (Window -> X ())
-myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
+myMouseBindings XConfig {XMonad.modMask = modm} = M.fromList $
 
     -- mod-button1, Set the window to floating mode and move by dragging
     [ ((modm, button1), (\w -> focus w >> mouseMoveWindow w
@@ -245,6 +247,7 @@ myStartupHook = do
   unsafeSpawn "${HOME}/.scripts/set-background.sh"
   spawnOnce "pasystray"
   spawnOnce "blueman-applet"
+  spawnOnce "xinput --set-prop \"AlpsPS/2 ALPS DualPoint Stick\" \"libinput Accel Speed\" 1.0" --Set the trackpoint sensitivity.
   -- safeSpawn "wicd-client" []
 
 ------------------------------------------------------------------------

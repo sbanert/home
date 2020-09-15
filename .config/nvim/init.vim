@@ -3,7 +3,9 @@ set nocompatible
 
 runtime plugins.vim
 runtime settings.vim
+runtime whichkeys.vim
 
+let g:loaded_python_provider = 0
 let g:polyglot_disabled = ['latex']
 filetype off
 let mapleader = "<space>"
@@ -28,3 +30,12 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Set SML/NJ executable.
 let g:sml_smlnj_executable = '/usr/bin/smlnj'
+
+"Dynamic linking for Haskell
+let g:ale_haskell_ghc_options = '-fno-code -v0 -dynamic'
+
+let g:airline_powerline_fonts = 1
+let g:airline_detect_paste = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'gruvbox'
+" let g:airline_theme = 'nord'
