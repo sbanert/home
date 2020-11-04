@@ -1,0 +1,2 @@
+* Configuration files in $HOME
+This is to be used as a bare Git repository. See [[https://www.atlassian.com/git/tutorials/dotfiles][this guide]] for more information and the git commands.
