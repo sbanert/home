@@ -1,5 +1,7 @@
 ;; Gruvbox theme
-(use-package doom-themes :config (load-theme 'doom-gruvbox t))
+(use-package doom-themes
+  :config (load-theme 'doom-gruvbox t)
+  :custom (doom-gruvbox-dark-variant "hard"))
 (use-package all-the-icons)               ;; Needed for doom-modeline
 (use-package doom-modeline :config (doom-modeline-mode 1))
 
@@ -36,12 +38,12 @@
 
 ;; Font: Fira Code needs to be installed on the system
 (set-face-attribute 'default nil :font "Fira Code Retina" :height 110)
-(use-package fira-code-mode :config (global-fira-code-mode)
-  :custom
-  (fira-code-mode-disabled-ligatures '(; "[]" ;; List of ligatures to turn off
-					; "#{"
-					; "#("
-					; "#_"
-					; "#_("
-				       "x")))
+;; (use-package fira-code-mode :config (global-fira-code-mode)
+;;   :custom
+;;   (fira-code-mode-disabled-ligatures '(; "[]" ;; List of ligatures to turn off
+;; 					; "#{"
+;; 					; "#("
+;; 					; "#_"
+;; 					; "#_("
+;; 				       "x")))
 ;; (set-face-attribute 'default nil :font "DejaVu Sans Mono for Powerline" :height 110)

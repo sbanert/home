@@ -2,6 +2,7 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{cleveref}
+\usepackage[babel]{csquotes}
 
 \newcommand{\PrimS}{\ensuremath{\mathcal{H}}}
 \newcommand{\PPrimS}{\ensuremath{\mathcal{K}}}
@@ -16,6 +17,7 @@
 \newcommand{\inpr}[2]{\ensuremath{\mathord{\left\langle #1, #2 \right\rangle}}}
 \newcommand{\Resolvent}[2]{\ensuremath{\mathop{J^{#1}_{#2}}}}
 \newcommand{\Prox}[2]{\ensuremath{\mathop{\mathrm{Prox}^{#1}_{#2}}}}
+\newcommand{\Proj}[1]{\ensuremath{\mathop{\mathrm{Proj}_{#1}}}}
 \newcommand\defeq{\ensuremath{\mathrel{\mathop:}=}}
 \newcommand{\Real}{\ensuremath{\mathbb{R}}}
 \newcommand{\RealExt}{\ensuremath{\overline{\mathbb{R}}}}
@@ -25,17 +27,21 @@
 \newcommand{\downto}{\ensuremath{\downarrow}}
 \newcommand{\level}[2]{\ensuremath{\mathfrak{L}^{#1}_{#2}}}
 \newcommand{\moreau}[2]{\ensuremath{{}^{#1}\! #2}}
+\newcommand{\ball}[2]{\ensuremath{B_{#1}\p{#2}}}
 
 \DeclareMathOperator{\argmin}{arg\,min}
 \DeclareMathOperator{\zer}{zer}
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\epi}{epi}
 \DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\interior}{int}
 \DeclareMathOperator{\epis}{epi\textsubscript{s}}
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
 \newtheorem{lemma}{Lemma}
 \newtheorem{satz}{Satz}
 \newtheorem{hilfssatz}{Hilfssatz}

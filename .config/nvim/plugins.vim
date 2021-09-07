@@ -31,6 +31,7 @@ Plug 'jez/vim-better-sml'             " Standard ML support
 Plug 'lervag/vimtex'                  " Additional LaTeX support
 Plug 'wlangstroth/vim-racket'         " Racket support
 Plug 'JuliaEditorSupport/julia-vim'   " Julia support
+Plug 'the-lambda-church/coquille'
 
 " Appearance
 Plug 'vim-airline/vim-airline'        " Status bar

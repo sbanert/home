@@ -28,6 +28,10 @@
 				  domain-name)))
 
 (load-file "~/.emacs.d/look.el")     ;; Contains commands for themes and look and feel.
+(defun banert/open-init-file ()
+  "Edit the `user-init-file', in another window."
+  (interactive)
+  (find-file-other-window user-init-file))
 
 ;; Hints for keybindings
 (use-package which-key :config (which-key-mode))
@@ -52,6 +56,7 @@
    ;; Files
    "f" '(:ignore t :which-key "File")
    "fd" 'dired
+   "fi" 'banert/open-init-file
    "ff" 'counsel-find-file
    "fr" 'counsel-recentf
    "fs" 'save-buffer
@@ -69,6 +74,11 @@
    ;; Projects
    "p" '(:ignore t :which-key "Project")
    "pf" 'counsel-git
+
+   ;; Packages
+   "P" '(:ignore t :which-key "Packages")
+   "Pr" 'package-refresh-contents
+   "Pl" 'package-list-packages
 
    ;; Quit
    "q" '(:ignore t :which-key "Quit")
@@ -189,9 +199,14 @@
   :diminish nil)
 
 ;; Language-specific packages
+(use-package proof-general)
+(use-package company-coq)
 (use-package julia-mode)              ;; Julia language major mode
 (use-package ledger-mode)             ;; Ledger mode for .ledger files
 (use-package haskell-mode)            ;; Haskell mode
+(use-package nix-mode)                ;; Nix mode
+(use-package rust-mode)               ;; Rust support
+(use-package json-mode)
 (use-package lsp-haskell
   :hook
   (haskell-mode . lsp)
