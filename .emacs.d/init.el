@@ -204,7 +204,17 @@
 (use-package julia-mode)              ;; Julia language major mode
 (use-package ledger-mode)             ;; Ledger mode for .ledger files
 (use-package haskell-mode)            ;; Haskell mode
-(use-package nix-mode)                ;; Nix mode
+(use-package nix-mode
+  :mode ("\\.nix\\'" "\\.nix.in\\'"))                ;; Nix mode
+(use-package nix-drv-mode
+  :ensure nix-mode
+  :mode "\\.drv\\'")
+(use-package nix-shell
+  :ensure nix-mode
+  :commands (nix-shell-unpack nix-shell-configure nix-shell-build))
+(use-package nix-repl
+  :ensure nix-mode
+  :commands (nix-repl))
 (use-package rust-mode)               ;; Rust support
 (use-package json-mode)
 (use-package lsp-haskell
