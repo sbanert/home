@@ -13,6 +13,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run (spawnPipe, safeSpawn, unsafeSpawn)
 import XMonad.Util.SpawnOnce (spawnOnce)
 import Graphics.X11.ExtraTypes.XF86
+import Graphics.X11.ExtraTypes.XorgDefault
 import Data.Monoid
 import System.Exit
 import System.IO (hPutStrLn)
@@ -114,6 +115,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
     -- Mod-Shift-/: Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
+    , ((modm .|. shiftMask, xK_x), spawn "setxkbmap ara")
+    , ((modm .|. shiftMask, xK_Arabic_hamza), spawn "setxkbmap us intl lv3:caps_switch")
     -- Brightness hotkeys
     , ((noModMask, xF86XK_MonBrightnessDown), spawn ("brightnessctl s 5%-"))
     , ((noModMask, xF86XK_MonBrightnessUp), spawn ("brightnessctl s 5%+"))
@@ -257,7 +260,7 @@ myStartupHook = do
 main :: IO ()
 main = do
   xmproc <- spawnPipe "xmobar /home/banert/.xmobarrc"
-  xmonad $ defaults xmproc
+  xmonad $ docks $ defaults xmproc
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
@@ -283,7 +286,7 @@ defaults xmproc = def {
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook,
-        handleEventHook    = myEventHook <+> docksEventHook,
+        handleEventHook    = myEventHook, -- <+> docksEventHook,
         logHook            = myLogHook xmproc,
         startupHook        = myStartupHook
     }

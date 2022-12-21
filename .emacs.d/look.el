@@ -37,7 +37,9 @@
 (setq visible-bell t)
 
 ;; Font: Fira Code needs to be installed on the system
-(set-face-attribute 'default nil :font "Fira Code Retina" :height 110)
+(set-face-attribute 'default nil :font "Noto Sans Mono" :height 110)
+;; (set-face-attribute 'default nil :font "Fira Code Retina" :height 110)
+
 ;; (use-package fira-code-mode :config (global-fira-code-mode)
 ;;   :custom
 ;;   (fira-code-mode-disabled-ligatures '(; "[]" ;; List of ligatures to turn off

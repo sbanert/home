@@ -1,3 +1,7 @@
+;;; banert --- My emacs configuration
+
+;;; Commentary:
+;;; Code:
 ;; Keep the customize variables out of this file.
 (setq custom-file "~/.emacs.d/custom-file.el")
 (load-file custom-file)
@@ -73,7 +77,11 @@
 
    ;; Projects
    "p" '(:ignore t :which-key "Project")
-   "pf" 'counsel-git
+   "pc" 'projectile-compile-project
+   "pf" 'counsel-projectile-find-file
+   "pk" 'projectile-kill-buffers
+   "po" 'org-projectile/goto-todos
+   "pr" 'projectile-recentf
 
    ;; Packages
    "P" '(:ignore t :which-key "Packages")
@@ -132,6 +140,14 @@
 
 (use-package lsp-mode)
 (use-package lsp-ui)
+(use-package projectile
+  :init
+  (projectile-mode +1))
+(use-package org-projectile
+  :init
+  (org-projectile-per-project)
+  :config
+  (setq org-projectile-per-project-filepath "TODOs.org"))
 
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
@@ -216,6 +232,7 @@
   :ensure nix-mode
   :commands (nix-repl))
 (use-package rust-mode)               ;; Rust support
+(use-package cargo-mode)
 (use-package json-mode)
 (use-package lsp-haskell
   :hook

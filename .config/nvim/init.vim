@@ -5,9 +5,8 @@ runtime plugins.vim
 runtime settings.vim
 runtime whichkeys.vim
 
-let g:loaded_python_provider = 0
-let g:polyglot_disabled = ['latex']
-filetype off
+"let g:loaded_python_provider = 0
+"let g:polyglot_disabled = ['latex']
 let mapleader = "<space>"
 let maplocalleader = ","
 
