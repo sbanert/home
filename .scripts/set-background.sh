@@ -1,7 +1,7 @@
 #!/bin/sh
 
 BACKGROUNDDIR="/usr/share/backgrounds/archlinux"
-BACKGROUNDFILE="archwave.png"
+BACKGROUNDFILE="archbtw.png"
 BACKGROUNDPATH="${BACKGROUNDDIR}/${BACKGROUNDFILE}"
 
 if [ -f $BACKGROUNDPATH ]; then

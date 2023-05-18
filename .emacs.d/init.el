@@ -215,6 +215,12 @@
   :diminish nil)
 
 ;; Language-specific packages
+(use-package yaml-mode
+  ;; :ensure yaml-mode
+  ;; :mode "\\.yml\\'"
+  ;; :hook
+  ;; (define-key yaml-mode-map "\C-m" 'newline-and-indent)
+  )
 (use-package proof-general)
 (use-package company-coq)
 (use-package julia-mode)              ;; Julia language major mode
