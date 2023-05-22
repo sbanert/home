@@ -242,7 +242,7 @@ myStartupHook = do
                                      "--alpha", "0",
                                      "--transparent", "true",
                                      "--tint", "0x282828",
-                                     "--height", "21",
+                                     "--height", "17",
                                      "--margin", "0"])
   -- spawnOnce "signal-desktop --start-in-tray"
   -- spawnOnce "slack --startup"

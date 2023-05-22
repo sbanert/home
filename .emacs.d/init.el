@@ -247,6 +247,10 @@
 (load-library "lilypond-init")        ;; Lilypond-mode
 (use-package auctex
   :defer t
+  :init
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+  ;; (setq TeX-view-program-selection '((output-pdf "Evince"))
+  ;; 	TeX-source-correlate-start-server t)
   :config
   (setq TeX-PDF-mode t)         ;; LaTeX support
   (setq TeX-auto-save t)
@@ -257,8 +261,6 @@
   (add-hook 'TeX-after-TeX-LaTeX-command-finished-hook
 	    #'TeX-revert-document-buffer)
   ;; to use pdfview with auctex
-  (setq TeX-view-program-selection '((output-pdf "pdf-tools"))
-	TeX-source-correlate-start-server t)
   (setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view"))))
 
 (use-package auctex-latexmk

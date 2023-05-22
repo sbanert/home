@@ -1,4 +1,4 @@
-Config { font = "xft:Noto Sans Mono:size=10:antialias=true"
+Config { font = "Noto Sans Mono 11"
        , additionalFonts = []
        , bgColor = "#282828"
        , fgColor = "#ebdbb2"
@@ -35,8 +35,11 @@ Config { font = "xft:Noto Sans Mono:size=10:antialias=true"
                                          -- charged status
                                          , "-i" , "<fc=#b8bb26>Charged</fc>"
                                   ] 50
+                    , Run Kbd     [ ("us(intl)", "US")
+                                  , ("ara", "AR")
+                                  ]
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{%battery% | %memory% | %date%"
+       , template = "%StdinReader% }{%battery% | %memory% | %kbd% | %date%"
        }
