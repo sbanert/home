@@ -115,6 +115,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
     -- Mod-Shift-/: Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
+    -- Swap keymaps
     , ((modm .|. shiftMask, xK_x), spawn "setxkbmap ara")
     , ((modm .|. shiftMask, xK_Arabic_hamza), spawn "setxkbmap us intl lv3:caps_switch")
     -- Brightness hotkeys
@@ -126,6 +127,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((noModMask, xF86XK_AudioMute), spawn ("pamixer -t"))
     , ((noModMask, xF86XK_AudioRaiseVolume), spawn ("pamixer -i 5"))
     , ((noModMask, xF86XK_AudioLowerVolume), spawn ("pamixer -d 5"))
+    -- Screen lock
+    , ((modm .|. shiftMask, xK_l     ), spawn ("xlock"))
     ]
     ++
     -- mod-[1..9], Switch to workspace N
