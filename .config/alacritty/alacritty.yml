@@ -1,6 +1,7 @@
 font:
   normal:
     family: Noto Mono for Powerline
+      # family: Noto Sans Mono
     style: Regular
 
   bold:
@@ -12,14 +13,14 @@ font:
   bold_italic:
     style: Bold Italic
 
-  size: 6.0
+  size: 9.0
   builtin_box_drawing: true
 
 draw_bold_text_with_bright_colors: false
 
 # Colour scheme
 import:
-  - ~/.config/alacritty/gruvbox_dark.yaml
+  - ~/.config/alacritty/pencil_light.yaml
 
   # Search colors
   #

@@ -8,7 +8,7 @@ export ZSH="/home/banert/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="eastwood"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -99,3 +99,25 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias config='git --git-dir=/home/banert/.cfg/ --work-tree=/home/banert'
 # alias ghc='ghc -dynamic'
+
+# opam configuration
+[[ ! -r /home/banert/.opam/opam-init/init.zsh ]] || source /home/banert/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# zig
+export PATH=$HOME/zig:$PATH
+
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/banert/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/banert/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/banert/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/banert/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
+

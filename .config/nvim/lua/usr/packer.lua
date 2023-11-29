@@ -19,12 +19,14 @@ require('packer').startup(function(use)
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
-      'j-hui/fidget.nvim',
+      { 'j-hui/fidget.nvim', tag = 'legacy'},
 
       -- Additional lua configuration, makes nvim stuff amazing
       'folke/neodev.nvim',
     },
   }
+
+  use 'github/copilot.vim'
 
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -48,9 +50,15 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
-  use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+  -- use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+  use 'preservim/vim-colors-pencil' -- Pencil colour scheme
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
-  use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("ibl").setup({})
+    end
+  } -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
@@ -62,6 +70,9 @@ require('packer').startup(function(use)
 
   -- LaTeX support
   use 'lervag/vimtex'
+
+  -- APL support
+  use 'zoomlogo/vim-apl'
 
   -- Parentheses etc.
   use ({

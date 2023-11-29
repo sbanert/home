@@ -1,7 +1,10 @@
 ;; Gruvbox theme
-(use-package doom-themes
-  :config (load-theme 'doom-gruvbox t)
-  :custom (doom-gruvbox-dark-variant "hard"))
+;; (use-package doom-themes
+;;   :config (load-theme 'doom-material t)
+;;   ;; :custom (doom-gruvbox-dark-variant "hard")
+;;   )
+(use-package material-theme
+  :config (load-theme 'material-light t))
 (use-package all-the-icons)               ;; Needed for doom-modeline
 (use-package doom-modeline :config (doom-modeline-mode 1))
 

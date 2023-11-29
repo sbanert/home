@@ -23,7 +23,7 @@ import qualified Data.Map        as M
 
 -- | The preferred terminal program.
 myTerminal :: String
-myTerminal = "uxterm"
+myTerminal = "alacritty"
 
 -- | Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
