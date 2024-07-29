@@ -7,13 +7,19 @@ return {
   end,
   config = function ()
     require("which-key").setup()
-    require("which-key").register {
-      ["<leader>f"] = { name = "[F]ile", _ = "which_key_ignore" },
-      ["<leader>b"] = { name = "[B]uffer", _ = "which_key_ignore" },
-      ["<leader>h"] = { name = "[H]elp", _ = "which_key_ignore" },
-      ["<leader>g"] = { name = "[G]it", _ = "which_key_ignore" },
-      ["<leader>l"] = { name = "[L]SP", _ = "which_key_ignore" },
-      ["<leader>p"] = { name = "[P]ackages", _ = "which_key_ignore" },
+    require("which-key").add {
+      { "<leader>b", group = "[B]uffer" },
+      { "<leader>b_", hidden = true },
+      { "<leader>f", group = "[F]ile" },
+      { "<leader>f_", hidden = true },
+      { "<leader>g", group = "[G]it" },
+      { "<leader>g_", hidden = true },
+      { "<leader>h", group = "[H]elp" },
+      { "<leader>h_", hidden = true },
+      { "<leader>l", group = "[L]SP" },
+      { "<leader>l_", hidden = true },
+      { "<leader>p", group = "[P]ackages" },
+      { "<leader>p_", hidden = true },
     }
   end,
 }
