@@ -103,21 +103,18 @@ alias config='git --git-dir=/home/banert/.cfg/ --work-tree=/home/banert'
 # opam configuration
 [[ ! -r /home/banert/.opam/opam-init/init.zsh ]] || source /home/banert/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-# zig
-export PATH=$HOME/zig:$PATH
-
-# # >>> conda initialize >>>
-# # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/banert/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/banert/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/banert/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/banert/miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# # <<< conda initialize <<<
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/banert/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/banert/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/banert/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/banert/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 

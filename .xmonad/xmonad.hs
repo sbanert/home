@@ -236,6 +236,7 @@ myLogHook xmproc = dynamicLogWithPP xmobarPP
 -- per-workspace layout choices.
 myStartupHook :: X ()
 myStartupHook = do
+  -- setDefaultCursor xC_pirate
   spawnOnce $ "trayer " ++ (unwords ["--edge", "top",
                                      "--align", "right",
                                      "--SetDockType", "true",
