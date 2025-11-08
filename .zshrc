@@ -118,3 +118,12 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# HASKELL
+[ -f "/home/banert/.ghcup/env" ] && . "/home/banert/.ghcup/env" # ghcup-env
+
+# RUST
+export PATH="/home/banert/.cargo/bin:$PATH"
+
+# NPM
+PATH="$HOME/.local/bin:$PATH"
+export npm_config_prefix="$HOME/.local"

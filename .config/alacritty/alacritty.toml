@@ -1,4 +1,3 @@
-import = ["/home/banert/.config/alacritty/pencil_light.toml"]
 
 [colors]
 draw_bold_text_with_bright_colors = false
@@ -20,3 +19,7 @@ style = "Italic"
 # family = "Noto Mono for Powerline"
 family = "Iosevka Nerd Font"
 style = "Regular"
+
+[general]
+# import = ["/home/banert/.config/alacritty/pencil_light.toml"]
+import = ["/home/banert/.config/alacritty/github_light_default.toml"]

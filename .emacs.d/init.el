@@ -22,12 +22,10 @@
 ;; My name and e-mail
 (let ((first-name "Sebastian")
       (last-name "Banert")
-      (domain-name "control.lth.se")
+      (domain-name "uni-bremen.de")
       (klammeraffe (list 64)))
   (setq user-full-name (concat first-name " " last-name)
-	user-mail-address (concat (downcase first-name)
-				  "."
-				  (downcase last-name)
+	user-mail-address (concat (downcase last-name)
 				  klammeraffe
 				  domain-name)))
 
@@ -224,8 +222,6 @@
 (use-package proof-general)
 (use-package company-coq)
 (use-package julia-mode)              ;; Julia language major mode
-(use-package dyalog-mode)
-;; (use-package dyalog-apl-input)
 (use-package ledger-mode)             ;; Ledger mode for .ledger files
 (use-package haskell-mode)            ;; Haskell mode
 (use-package nix-mode
@@ -296,3 +292,6 @@
 ;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
 (require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
 ;; ## end of OPAM user-setup addition for emacs / base ## keep this line
+
+(provide 'init)
+;;; init.el ends here

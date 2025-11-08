@@ -1,8 +1,6 @@
-;; Gruvbox theme
-;; (use-package doom-themes
-;;   :config (load-theme 'doom-material t)
-;;   ;; :custom (doom-gruvbox-dark-variant "hard")
-;;   )
+;;; look --- Layout settings for my emacs configuration.
+;;; Commentary:
+;;; Code:
 (use-package material-theme
   :config (load-theme 'material-light t))
 (use-package all-the-icons)               ;; Needed for doom-modeline
@@ -40,15 +38,7 @@
 (setq visible-bell t)
 
 ;; Font: Fira Code needs to be installed on the system
-(set-face-attribute 'default nil :font "Noto Sans Mono" :height 110)
-;; (set-face-attribute 'default nil :font "Fira Code Retina" :height 110)
+(set-face-attribute 'default nil :font "Iosevka Nerd Font" :height 110)
 
-;; (use-package fira-code-mode :config (global-fira-code-mode)
-;;   :custom
-;;   (fira-code-mode-disabled-ligatures '(; "[]" ;; List of ligatures to turn off
-;; 					; "#{"
-;; 					; "#("
-;; 					; "#_"
-;; 					; "#_("
-;; 				       "x")))
-;; (set-face-attribute 'default nil :font "DejaVu Sans Mono for Powerline" :height 110)
+(provide 'look)
+;;; look.el ends here

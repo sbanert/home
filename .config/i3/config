@@ -1,3 +1,5 @@
+font pango:Iosevka Nerd Font 11
+exec "$HOME/.scripts/set-background.sh"
 # Mod key = Windows key
 set $mod Mod4
 
@@ -8,7 +10,7 @@ set $up k
 set $right l
 
 # Terminal emulator
-set $term alacritty
+set $term ghostty
 
 focus_follows_mouse no
 
@@ -45,11 +47,13 @@ set $menu dmenu_run
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-input "type:keyboard" {
-    xkb_layout us
-    xkb_variant intl
-    xkb_options lv3:caps_switch
-}
+exec "setxkbmap us intl lv3:caps_switch"
+# bindsym $mod+x "setxkbmap ara"
+# input "type:keyboard" {
+#     xkb_layout us
+#     xkb_variant intl
+#     xkb_options lv3:caps_switch
+# }
 #
 # Example configuration:
 #
@@ -81,7 +85,7 @@ input "type:keyboard" {
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    floating_modifier $mod normal
+    # floating_modifier $mod normal
 
     # Reload the configuration file
     bindsym $mod+q reload
@@ -228,7 +232,7 @@ bar {
     # The default just shows the current date and time.
     status_command while ~/.config/i3/status.sh; do sleep 1; done
 
-    font DejaVu Sans Mono
+    font pango:Iosevka Nerd Font 11
 
     colors {
         statusline #ffffff
@@ -238,4 +242,4 @@ bar {
 }
 
 # Include system-side code snippets.
-include /etc/sway/config.d/*
+# include /etc/sway/config.d/*
